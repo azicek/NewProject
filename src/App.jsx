@@ -6,16 +6,17 @@ import FaqPage from './pages/FaqPage'
 import ContactPage from './pages/ContactPage'
 import AboutPage from './pages/AboutPage'
 import HomePage from './pages/HomePage'
-
+import PageTitle from './components/Pagetitle/PageTitle'
 export default function App() {
   return (
     <>
     <Header />
     <Routes>
-     <Route path='/' element={<HomePage />} />
-     <Route path='/about' element={<AboutPage />} />
-     <Route path='/contact' element={<ContactPage />} />
-     <Route path='/faq' element={<FaqPage />} />
+
+     <Route path='/' element={<> <PageTitle title="Home" /><HomePage /> </>} />
+     <Route path='/about' element={<><PageTitle title="About" /><AboutPage /> </>} />
+     <Route path='/contact' element={<><PageTitle title="Contact" /><ContactPage /> </>} />
+     <Route path='/faq' element={<><PageTitle title="FAQ" /><FaqPage /> </>} />
     </Routes>
     <Footer />
     </>
